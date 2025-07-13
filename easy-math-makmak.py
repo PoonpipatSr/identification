@@ -1,22 +1,35 @@
-# โปรแกรมคำนวณเลขพื้นฐาน
+def add(a, b):
+    return a + b
 
-print("==== โปรแกรมคำนวณเลขพื้นฐาน ====")
+def subtract(a, b):
+    return a - b
 
-num1 = float(input("กรอกเลขตัวที่ 1: "))
-num2 = float(input("กรอกเลขตัวที่ 2: "))
+def multiply(a, b):
+    return a * b
 
-sum_result = num1 + num2
-diff_result = num1 - num2
-prod_result = num1 * num2
+def divide(a, b):
+    if b == 0:
+        return "หารไม่ได้ (หารด้วยศูนย์)"
+    return a / b
 
-if num2 != 0:
-    div_result = num1 / num2
-else:
-    div_result = "หารไม่ได้ (หารด้วยศูนย์)"
+def average(a, b):
+    return (a + b) / 2
 
-print("\nผลลัพธ์:")
-print(f"ผลบวก: {sum_result}")
-print(f"ผลลบ: {diff_result}")
-print(f"ผลคูณ: {prod_result}")
-print(f"ผลหาร: {div_result}")
-print(f"ค่าเฉลี่ย: {(num1 + num2) / 2}")
+def main():
+    print("==== โปรแกรมคำนวณเลขพื้นฐาน ====")
+
+    try:
+        num1 = float(input("กรอกเลขตัวที่ 1: "))
+        num2 = float(input("กรอกเลขตัวที่ 2: "))
+    except ValueError:
+        print("กรุณากรอกตัวเลขเท่านั้น")
+        return
+
+    print("\nผลลัพธ์:")
+    print(f"ผลบวก: {add(num1, num2)}")
+    print(f"ผลลบ: {subtract(num1, num2)}")
+    print(f"ผลคูณ: {multiply(num1, num2)}")
+    print(f"ผลหาร: {divide(num1, num2)}")
+    print(f"ค่าเฉลี่ย: {average(num1, num2)}")
+
+main()
